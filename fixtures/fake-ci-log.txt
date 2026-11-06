@@ -1,0 +1,13 @@
+[CI] job=unit-tests run=88421 ref=main sha=a1b2c3d
+[CI] PASS tax_calculator_basic (0.12s)
+[CI] PASS tax_calculator_vat_eu (0.18s)
+[CI] FAIL tax_calculator_zero_rate
+       Traceback (most recent call last):
+         File "tests/test_tax.py", line 88, in test_zero_rate_sku
+           assert calc.rate(sku) == 0.0
+         File "app/tax.py", line 41, in rate
+           return self._table[sku.region].rate  # sku.region is None for digital gifts
+       AttributeError: 'NoneType' object has no attribute 'rate'
+[CI] FAIL summary: 1 failed, 42 passed
+[CI] note: failure reproduced locally with fixtures/cart_zero_rate.json
+[CI] recommendation: hotfix guard for sku.region is None; add regression test

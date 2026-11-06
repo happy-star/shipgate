@@ -1,0 +1,28 @@
+# Secrets / env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Switch / local runtime
+.switch/
+*.log
+tmp/
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
